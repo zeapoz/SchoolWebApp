@@ -41,6 +41,15 @@ namespace SchoolWebApp.Data
             context.Courses.AddRange(courses);
             context.SaveChanges();
 
+            var teachers = new Teacher[]
+            {
+                new Teacher{FirstMidName="John",LastName="Smith"},
+                new Teacher{FirstMidName="Emily",LastName="Patrickson"},
+            };
+
+            context.Teachers.AddRange(teachers);
+            context.SaveChanges();
+
             var enrollments = new Enrollment[]
             {
                 new Enrollment{StudentID=1,CourseID=1050,Grade=Grade.A},
@@ -58,6 +67,20 @@ namespace SchoolWebApp.Data
             };
 
             context.Enrollments.AddRange(enrollments);
+            context.SaveChanges();
+
+            var teacherCourses = new TeacherCourses[]
+            {
+                new TeacherCourses{CourseID=1050,TeacherID=1},
+                new TeacherCourses{CourseID=4022,TeacherID=1},
+                new TeacherCourses{CourseID=4041,TeacherID=2},
+                new TeacherCourses{CourseID=1045,TeacherID=1},
+                new TeacherCourses{CourseID=3141,TeacherID=1},
+                new TeacherCourses{CourseID=2021,TeacherID=2},
+                new TeacherCourses{CourseID=2042,TeacherID=2},
+            };
+
+            context.TeacherCourses.AddRange(teacherCourses);
             context.SaveChanges();
         }
     }

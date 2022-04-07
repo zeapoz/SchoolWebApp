@@ -10,5 +10,6 @@ namespace SchoolWebApp.Models
         public int Credits { get; set; }
 
         public ICollection<Enrollment> Enrollments { get; set; }
+        public ICollection<TeacherCourses> TeacherCourses { get; set; }
     }
 }

@@ -31,6 +31,8 @@ namespace SchoolWebApp.Pages.Students
             Student = await _context.Students
                 .Include(s => s.Enrollments)
                 .ThenInclude(e => e.Course)
+                .ThenInclude(c => c.TeacherCourses)
+                .ThenInclude(t => t.Teacher)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
 

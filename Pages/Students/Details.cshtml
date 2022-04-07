@@ -37,6 +37,7 @@
                 <tr>
                     <th>Course Tite</th>
                     <th>Grade</th>
+                    <th>Teacher(s)</th>
                 </tr>
                 @foreach (var item in Model.Student.Enrollments)
                 {
@@ -46,6 +47,12 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Grade)
+                        </td>
+                        <td>
+                            @foreach (var t in item.Course.TeacherCourses)
+                            {
+                                @Html.DisplayFor(modelItem => t.Teacher.FullName);
+                            }
                         </td>
                     </tr>
                 }
