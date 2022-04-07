@@ -16338,11 +16338,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Admin.cshtml",
-      "TargetPath": "Pages\\Admin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Students/Delete.cshtml",
       "TargetPath": "Pages\\Students\\Delete.cshtml",
       "FileKind": "mvc"
