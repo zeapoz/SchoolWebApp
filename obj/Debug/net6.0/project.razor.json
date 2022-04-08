@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Courses/Delete.cshtml",
+      "TargetPath": "Pages\\Courses\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
@@ -16318,13 +16323,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Courses/Edit.cshtml",
+      "TargetPath": "Pages\\Courses\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Shared/_LoginPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Courses/Index.cshtml",
+      "TargetPath": "Pages\\Courses\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Teachers/Create.cshtml",
+      "TargetPath": "Pages\\Teachers\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Courses/Create.cshtml",
+      "TargetPath": "Pages\\Courses\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16338,6 +16363,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Teachers/Details.cshtml",
+      "TargetPath": "Pages\\Teachers\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Courses/Details.cshtml",
+      "TargetPath": "Pages\\Courses\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Students/Delete.cshtml",
       "TargetPath": "Pages\\Students\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16348,13 +16383,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Teachers/Edit.cshtml",
+      "TargetPath": "Pages\\Teachers\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Shared/_Layout.cshtml",
       "TargetPath": "Pages\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Teachers/Delete.cshtml",
+      "TargetPath": "Pages\\Teachers\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Areas/Identity/Pages/_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/jonathan/Programming/School/SchoolWebApp/Pages/Teachers/Index.cshtml",
+      "TargetPath": "Pages\\Teachers\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
