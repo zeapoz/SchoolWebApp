@@ -13,9 +13,9 @@ namespace SchoolWebApp.Pages.Teachers
 {
     public class EditModel : PageModel
     {
-        private readonly SchoolWebApp.Data.SchoolContext _context;
+        private readonly SchoolWebApp.Data.ApplicationDbContext _context;
 
-        public EditModel(SchoolWebApp.Data.SchoolContext context)
+        public EditModel(SchoolWebApp.Data.ApplicationDbContext context)
         {
             _context = context;
         }

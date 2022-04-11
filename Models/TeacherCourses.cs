@@ -4,6 +4,7 @@ namespace SchoolWebApp.Models
 {
     public class TeacherCourses
     {
+        [Key]
         public int TeacherCoursesID { get; set; }
         public int CourseID { get; set; }
         public int TeacherID { get; set; }

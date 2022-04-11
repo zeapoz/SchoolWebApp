@@ -1,10 +1,10 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolWebApp.Models
 {
     public class Course
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [Key]
         public int CourseID { get; set; }
         public string Title { get; set; }
         public int Credits { get; set; }

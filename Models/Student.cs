@@ -4,6 +4,7 @@ namespace SchoolWebApp.Models
 {
     public class Student
     {
+        [Key]
         public int ID { get; set; }
         [Display(Name = "Last Name")]
         public string LastName { get; set; }

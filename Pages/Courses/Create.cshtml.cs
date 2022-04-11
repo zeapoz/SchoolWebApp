@@ -12,9 +12,9 @@ namespace SchoolWebApp.Pages.Courses
 {
     public class CreateModel : PageModel
     {
-        private readonly SchoolWebApp.Data.SchoolContext _context;
+        private readonly SchoolWebApp.Data.ApplicationDbContext _context;
 
-        public CreateModel(SchoolWebApp.Data.SchoolContext context)
+        public CreateModel(SchoolWebApp.Data.ApplicationDbContext context)
         {
             _context = context;
         }

@@ -12,9 +12,9 @@ namespace SchoolWebApp.Pages.Students
 {
     public class DeleteModel : PageModel
     {
-        private readonly SchoolWebApp.Data.SchoolContext _context;
+        private readonly SchoolWebApp.Data.ApplicationDbContext _context;
 
-        public DeleteModel(SchoolWebApp.Data.SchoolContext context)
+        public DeleteModel(SchoolWebApp.Data.ApplicationDbContext context)
         {
             _context = context;
         }

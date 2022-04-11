@@ -22,13 +22,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        @if (Context.User.Identity.IsAuthenticated) {
+                        @if(User.IsInRole(StaticDetail.StudentUser) || User.IsInRole(StaticDetail.TeacherUser) || User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Students/Index">Students</a>
                             </li>
+                        }
+                        @if(User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Teachers/Index">Teachers</a>
                             </li>
+                        }
+                        @if(User.IsInRole(StaticDetail.TeacherUser) || User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Courses/Index">Courses</a>
                             </li>

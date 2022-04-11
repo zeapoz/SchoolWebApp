@@ -4,7 +4,7 @@ namespace SchoolWebApp.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(SchoolContext context)
+        public static void Initialize(ApplicationDbContext context)
         {
             // Look for any students.
             if (context.Students.Any())

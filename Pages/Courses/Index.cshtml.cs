@@ -12,9 +12,9 @@ namespace SchoolWebApp.Pages.Courses
 {
     public class IndexModel : PageModel
     {
-        private readonly SchoolWebApp.Data.SchoolContext _context;
+        private readonly SchoolWebApp.Data.ApplicationDbContext _context;
 
-        public IndexModel(SchoolWebApp.Data.SchoolContext context)
+        public IndexModel(SchoolWebApp.Data.ApplicationDbContext context)
         {
             _context = context;
         }
