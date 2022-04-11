@@ -13,6 +13,10 @@ namespace SchoolWebApp.Models
         [Display(Name = "Enrollment Date")]
         public DateTime EnrollmentDate { get; set; }
 
+        public string FullName {
+            get { return LastName + ", " + FirstMidName; }
+        }
+
         public ICollection<Enrollment> Enrollments { get; set; }
     }
 }

@@ -142,7 +142,7 @@ namespace SchoolWebApp.Areas.Identity.Pages.Account
                     {
                         await _roleManager.CreateAsync(new IdentityRole(StaticDetail.StudentUser));
                     }
-                    await _userManager.AddToRoleAsync(user, StaticDetail.AdminUser);
+                    await _userManager.AddToRoleAsync(user, StaticDetail.StudentUser);
 
                     _logger.LogInformation("User created a new account with password.");
 
