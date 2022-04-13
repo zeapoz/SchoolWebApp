@@ -77,7 +77,9 @@ namespace SchoolWebApp.Data
                 new TeacherCourses{CourseID=1045,TeacherID=1},
                 new TeacherCourses{CourseID=3141,TeacherID=1},
                 new TeacherCourses{CourseID=2021,TeacherID=2},
+                new TeacherCourses{CourseID=2042,TeacherID=1},
                 new TeacherCourses{CourseID=2042,TeacherID=2},
+                new TeacherCourses{CourseID=4041,TeacherID=1},
             };
 
             context.TeacherCourses.AddRange(teacherCourses);

@@ -26,7 +26,24 @@
         <dd class="col-sm-10">
             <table class="table">
                 <tr>
-                    <th>Enrolled Student</th>
+                    <th>Teacher(s)</th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model.Course.TeacherCourses)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Teacher.FullName)
+                        </td>
+                        <td>
+                            <a asp-page="../TeachersCourses/Delete" asp-route-id="@item.Teacher.TeacherID">Remove</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+            <table class="table">
+                <tr>
+                    <th>Enrolled Student(s)</th>
                     <th>Grade</th>
                     <th></th>
                 </tr>

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
 
-namespace SchoolWebApp.Pages.Courses
+namespace SchoolWebApp.Pages.TeachersCourses
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace SchoolWebApp.Pages.Courses
             _context = context;
         }
 
-        public Course Course { get; set; }
+        public TeacherCourses TeacherCourses { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,15 +28,11 @@ namespace SchoolWebApp.Pages.Courses
                 return NotFound();
             }
 
-            Course = await _context.Courses
-                .Include(c => c.Enrollments)
-                .ThenInclude(e => e.Student)
-                .Include(c => c.TeacherCourses)
-                .ThenInclude(t => t.Teacher)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.CourseID == id);
+            TeacherCourses = await _context.TeacherCourses
+                .Include(t => t.Course)
+                .Include(t => t.Teacher).FirstOrDefaultAsync(m => m.TeacherCoursesID == id);
 
-            if (Course == null)
+            if (TeacherCourses == null)
             {
                 return NotFound();
             }
