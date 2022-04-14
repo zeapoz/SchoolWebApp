@@ -24,11 +24,14 @@
                 <input asp-for="Student.FirstMidName" class="form-control" />
                 <span asp-validation-for="Student.FirstMidName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Student.EnrollmentDate" class="control-label"></label>
-                <input asp-for="Student.EnrollmentDate" class="form-control" />
-                <span asp-validation-for="Student.EnrollmentDate" class="text-danger"></span>
-            </div>
+            @if (!User.IsInRole(StaticDetail.StudentUser))
+            {
+                <div class="form-group">
+                    <label asp-for="Student.EnrollmentDate" class="control-label"></label>
+                    <input asp-for="Student.EnrollmentDate" class="form-control" />
+                    <span asp-validation-for="Student.EnrollmentDate" class="text-danger"></span>
+                </div>
+            }
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -37,7 +40,12 @@
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    @if(!User.IsInRole(StaticDetail.StudentUser))
+    {
+        <a asp-page="./Index">Back to List</a>
+    } else {
+        <a href="javascript:history.go(-1)">Back</a>
+    }
 </div>
 
 @section Scripts {

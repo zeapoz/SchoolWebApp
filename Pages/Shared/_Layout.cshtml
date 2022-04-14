@@ -22,7 +22,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        @if(User.IsInRole(StaticDetail.StudentUser) || User.IsInRole(StaticDetail.TeacherUser) || User.IsInRole(StaticDetail.AdminUser)) {
+                        @if(User.IsInRole(StaticDetail.StudentUser)) {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Students/Details" asp-route-id="1">My info</a>
+                            </li>
+                        }
+                        @if(User.IsInRole(StaticDetail.TeacherUser) || User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Students/Index">Students</a>
                             </li>
