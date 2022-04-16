@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using SchoolWebApp.Data;
+using SchoolWebApp.Models;
 
 namespace SchoolWebApp.Areas.Identity.Pages.Account
 {
@@ -87,6 +88,12 @@ namespace SchoolWebApp.Areas.Identity.Pages.Account
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
+
+            // Input model for SchoolID
+            [Required]
+            [StringLength(6, ErrorMessage = "The {0} must be {1} characters long.", MinimumLength = 6)]
+            [Display(Name = "School ID Number")]
+            public string SchoolID { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
