@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using SchoolWebApp.Models;
+@inject UserManager<ApplicationUser> UserManager;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,9 +26,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         @if(User.IsInRole(StaticDetail.StudentUser)) {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Students/Details" asp-route-id="1">My info</a>
-                            </li>
+                            var user = await UserManager.GetUserAsync(User);
+                            if (user != null) {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Students/Details" asp-route-id="@user.SchoolID">My info</a>
+                                </li>
+                            }
                         }
                         @if(User.IsInRole(StaticDetail.TeacherUser) || User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
