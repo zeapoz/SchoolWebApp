@@ -51,7 +51,8 @@
                         <td>
                             @foreach (var t in item.Course.TeacherCourses)
                             {
-                                @Html.DisplayFor(modelItem => t.Teacher.FullName);
+                                @Html.DisplayFor(modelItem => t.Teacher.FullName)
+                                <br>
                             }
                         </td>
                     </tr>

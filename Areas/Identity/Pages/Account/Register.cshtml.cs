@@ -136,19 +136,6 @@ namespace SchoolWebApp.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
-                    // Creates the roles in the database if they don't exist
-                    if (!await _roleManager.RoleExistsAsync(StaticDetail.AdminUser))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(StaticDetail.AdminUser));
-                    }
-                    if (!await _roleManager.RoleExistsAsync(StaticDetail.TeacherUser))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(StaticDetail.TeacherUser));
-                    }
-                    if (!await _roleManager.RoleExistsAsync(StaticDetail.StudentUser))
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(StaticDetail.StudentUser));
-                    }
                     await _userManager.AddToRoleAsync(user, StaticDetail.StudentUser);
 
                     _logger.LogInformation("User created a new account with password.");

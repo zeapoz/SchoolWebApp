@@ -1,17 +1,72 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using SchoolWebApp.Models;
 
 namespace SchoolWebApp.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(ApplicationDbContext context)
+        public static void Initialize(
+            ApplicationDbContext context,
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
-            // Look for any students.
+            SeedSchool(context);
+            SeedRoles(roleManager);
+            SeedUsers(userManager);
+        }
+
+        private static async void SeedRoles(RoleManager<IdentityRole> roleManager)
+        {
+            // Creates the roles in the database if they don't exist
+            if (!await roleManager.RoleExistsAsync(StaticDetail.AdminUser))
+            {
+                await roleManager.CreateAsync(new IdentityRole(StaticDetail.AdminUser));
+            }
+            if (!await roleManager.RoleExistsAsync(StaticDetail.TeacherUser))
+            {
+                await roleManager.CreateAsync(new IdentityRole(StaticDetail.TeacherUser));
+            }
+            if (!await roleManager.RoleExistsAsync(StaticDetail.StudentUser))
+            {
+                await roleManager.CreateAsync(new IdentityRole(StaticDetail.StudentUser));
+            }
+        }
+
+        private static void SeedUsers(UserManager<ApplicationUser> userManager)
+        {
+            // Creates default users
+            CreateUser(userManager, "admin@localhost", "Admin1!", StaticDetail.AdminUser);
+            CreateUser(userManager, "teacher@localhost", "Teacher1!", StaticDetail.TeacherUser);
+            CreateUser(userManager, "student@localhost", "Student1!", StaticDetail.StudentUser, "111111");
+        }
+
+        private static void CreateUser(
+            UserManager<ApplicationUser> userManager,
+            string email,
+            string password,
+            string role,
+            string schoolID = "")
+        {
+            var user = new ApplicationUser {
+                UserName = email,
+                Email = email,
+                SchoolID = schoolID,
+            };
+            IdentityResult result = userManager.CreateAsync(user, password).Result;
+
+            if (result.Succeeded)
+            {
+                userManager.AddToRoleAsync(user, role).Wait();
+            }
+        }
+
+        private static void SeedSchool(ApplicationDbContext context)
+        {
             if (context.Students.Any())
             {
                 return;   // DB has been seeded
             }
-
             var students = new Student[]
             {
                 new Student{ID=111111,FirstMidName="Carson",LastName="Alexander",EnrollmentDate=DateTime.Parse("2019-09-01")},
