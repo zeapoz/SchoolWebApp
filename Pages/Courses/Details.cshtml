@@ -36,7 +36,7 @@
                             @Html.DisplayFor(modelItem => item.Teacher.FullName)
                         </td>
                         <td>
-                            <a asp-page="../TeachersCourses/Delete" asp-route-id="@item.Teacher.TeacherID">Remove</a>
+                            <a asp-page="../TeachersCourses/Delete" asp-route-id="@item.TeacherCoursesID">Remove</a>
                         </td>
                     </tr>
                 }
@@ -57,7 +57,7 @@
                             @Html.DisplayFor(modelItem => item.Grade)
                         </td>
                         <td>
-                            <a asp-page="../Enrollments/Delete" asp-route-id="@item.Student.ID">Remove</a>
+                            <a asp-page="../Enrollments/Delete" asp-route-id="@item.EnrollmentID">Remove</a>
                         </td>
                     </tr>
                 }

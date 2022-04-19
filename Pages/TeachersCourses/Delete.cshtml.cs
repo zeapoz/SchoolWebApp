@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.TeachersCourses
 {
+    [Authorize(Policy = "Teacher")]
     public class DeleteModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;
@@ -55,7 +57,7 @@ namespace SchoolWebApp.Pages.TeachersCourses
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Courses/Index");
         }
     }
 }

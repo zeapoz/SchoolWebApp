@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.Teachers
 {
+    [Authorize(Policy = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;

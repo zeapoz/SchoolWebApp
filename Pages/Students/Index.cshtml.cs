@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.Students
 {
+    [Authorize(Policy = "Teacher")]
     public class IndexModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;

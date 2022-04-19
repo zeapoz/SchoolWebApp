@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.Teachers
 {
+    [Authorize(Policy = "Admin")]
     public class EditModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;

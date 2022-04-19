@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Models;
 using SchoolWebApp.Data;
+using SchoolWebApp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,17 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("Admin", policy => 
+        policy.RequireRole(StaticDetail.AdminUser));
+
+    options.AddPolicy("Teacher", policy => 
+        policy.RequireRole(StaticDetail.AdminUser, StaticDetail.TeacherUser));
+
+    options.AddPolicy("Student", policy => 
+        policy.RequireRole(StaticDetail.AdminUser, StaticDetail.TeacherUser, StaticDetail.StudentUser));
+});
 
 var app = builder.Build();
 

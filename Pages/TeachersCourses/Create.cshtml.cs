@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.TeachersCourses
 {
+    [Authorize(Policy = "Admin")]
     public class CreateModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;

@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.Students
 {
+    [Authorize(Policy = "Student")]
     public class EditModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;
@@ -66,7 +68,7 @@ namespace SchoolWebApp.Pages.Students
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Index");
         }
 
         private bool StudentExists(int id)

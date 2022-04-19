@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.Students
 {
+    [Authorize(Policy = "Teacher")]
     public class DeleteModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;
