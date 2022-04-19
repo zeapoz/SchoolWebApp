@@ -42,7 +42,7 @@ namespace SchoolWebApp.Pages.Enrollments
             _context.Enrollments.Add(Enrollment);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Courses/Index");
         }
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.TeachersCourses
 {
-    [Authorize(Policy = "Admin")]
+    [Authorize(Policy = "Teacher")]
     public class CreateModel : PageModel
     {
         private readonly SchoolWebApp.Data.ApplicationDbContext _context;
@@ -42,7 +42,7 @@ namespace SchoolWebApp.Pages.TeachersCourses
             _context.TeacherCourses.Add(TeacherCourses);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("../Courses/Index");
         }
     }
 }
