@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SchoolWebApp.Data;
 using SchoolWebApp.Models;
+using SchoolWebApp.Utility;
 using Microsoft.AspNetCore.Authorization;
 
 namespace SchoolWebApp.Pages.Students
@@ -33,14 +34,12 @@ namespace SchoolWebApp.Pages.Students
 
             switch (sortOrder) {
                 case "name_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.LastName);
+                    Student = Sorting.BubbleSort(studentsIQ).ToList();
                     break;
                 default:
-                    studentsIQ = studentsIQ.OrderBy(s => s.LastName);
+                    Student = await studentsIQ.AsNoTracking().ToListAsync();
                     break;
             }
-
-            Student = await studentsIQ.AsNoTracking().ToListAsync();
         }
     }
 }

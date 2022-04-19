@@ -1,4 +1,4 @@
-namespace SchoolWebApp
+namespace SchoolWebApp.Utility
 {
     public static class StaticDetail
     {
