@@ -14,7 +14,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">SchoolWebApp</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -24,29 +24,29 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         @if(User.IsInRole(StaticDetail.StudentUser)) {
                             var user = await UserManager.GetUserAsync(User);
                             if (user != null) {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Students/Details" asp-route-id="@user.SchoolID">My info</a>
+                                    <a class="nav-link text-light" asp-area="" asp-page="/Students/Details" asp-route-id="@user.SchoolID">My info</a>
                                 </li>
                             }
                         }
                         @if(User.IsInRole(StaticDetail.TeacherUser) || User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Students/Index">Students</a>
+                                <a class="nav-link text-light" asp-area="" asp-page="/Students/Index">Students</a>
                             </li>
                         }
                         @if(User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Teachers/Index">Teachers</a>
+                                <a class="nav-link text-light" asp-area="" asp-page="/Teachers/Index">Teachers</a>
                             </li>
                         }
                         @if(User.IsInRole(StaticDetail.TeacherUser) || User.IsInRole(StaticDetail.AdminUser)) {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Courses/Index">Courses</a>
+                                <a class="nav-link text-light" asp-area="" asp-page="/Courses/Index">Courses</a>
                             </li>
                         }
                     </ul>
